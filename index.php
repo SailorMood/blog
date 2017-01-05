@@ -1,12 +1,18 @@
 <?php
 require ('./class/Autoload.php');
 spl_autoload_register('Autoload::classAutoloader');
-include('./class/Log.php');
+require('common/pdo.php');
 
-try
-{
-    throw new Exception("Error");
-} catch(Exception $e){
-    Log::writeCSV($e);
-}
-var_dump($e);
+//include('./class/Log.php');
+
+//try
+//{
+//    throw new Exception("Error");
+//} catch(Exception $e){
+//    Log::writeCSV($e);
+//}
+include('contents/inscription.inc.php');
+var_dump($instance);
+?>
+
+
