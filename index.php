@@ -1,3 +1,12 @@
 <?php
-require ('.class/Autoload.php');
-spl_autoloader_register('Autoload::classAutoloader');
+require ('./class/Autoload.php');
+spl_autoload_register('Autoload::classAutoloader');
+include('./class/Log.php');
+
+try
+{
+    throw new Exception("Error");
+} catch(Exception $e){
+    Log::writeCSV($e);
+}
+var_dump($e);
