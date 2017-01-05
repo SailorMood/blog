@@ -11,7 +11,7 @@ class User
 
 
     public static function inscription(){
-        var_dump($_POST);
+
         $pseudo = $_POST['pseudo'];
         $mail = $_POST['mail'];
         $password = $_POST['password'];
@@ -39,19 +39,20 @@ VALUES (:pseudo, :mail, :password, :lastname, :firstname)");
     }
 
     public static function connexion(){
-        $connected = false;
 
-        if (isset($_POST['email']) && isset($_POST['password'])) {
+
+        if (isset($_POST['pseudo']) && isset($_POST['password'])) {
 
             $sql = "SELECT *
   FROM user
-  WHERE mail='".$_POST['mail']."'
+  WHERE pseudo='".$_POST['pseudo']."'
   AND password='".$_POST['password']."'";
+            $instance = new PDO("mysql:host=localhost;dbname=blog", "root", "");
             $user = $instance->query($sql)->fetch();
 
             if ($user) {
                 $_SESSION['user'] = array(
-                    "lastname" => $user['lastname'],
+                    "pseudo" => $user['pseudo'],
                     "userId" => $user['id']
                 );
                 $connected = true;

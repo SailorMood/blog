@@ -2,6 +2,7 @@
 require ('./class/Autoload.php');
 spl_autoload_register('Autoload::classAutoloader');
 require('common/pdo.php');
+session_start();
 
 //include('./class/Log.php');
 
@@ -12,7 +13,13 @@ require('common/pdo.php');
 //    Log::writeCSV($e);
 //}
 include('contents/inscription.inc.php');
-var_dump($instance);
+include('contents/connexion.inc.php');
+include('contents/deconnexion.inc.php');
+
+if(isset($_SESSION['user'])){
+    echo 'Salut ' . $_SESSION['user']['pseudo'];
+}
+
 ?>
 
 

@@ -8,7 +8,7 @@
     }
 
 ?>
-
+<h1>Inscription</h1>
 <form method="post" action="index.php">
     <label for="pseudo">Pseudo :<input type="text" name="pseudo"></label><br>
     <label for="mail">Email :<input type="mail" name="mail"></label><br>
