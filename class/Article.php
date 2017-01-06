@@ -25,8 +25,9 @@ class Article
     public static function modifier(){
         $instance = new PDO("mysql:host=localhost;dbname=blog", "root", "");
         $sql = "UPDATE article
-SET id='".$_POST['id']."',titre='".$_POST['titre']."',contenu='".$_POST['contenu']."',date=".$_POST['date']."
-WHERE id = ".$_POST['articleId'];
+SET id = '".$_POST['id']."'titre='".$_POST['titre']."',contenu='".$_POST['contenu']."',date=".$_POST['date']."
+WHERE id = ".$_POST['id'];
+
 
     $updateSuccess = $instance->exec($sql);
 
