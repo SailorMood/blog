@@ -7,7 +7,7 @@ if (isset($_POST['deconnect'])){
 }
 
 ?>
-
+<h1>Déconnexion</h1>
 <form method="post" action="index.php">
     <input type="submit" name="deconnect" value="Déconnexion">
 </form>

@@ -15,6 +15,9 @@ session_start();
 include('contents/inscription.inc.php');
 include('contents/connexion.inc.php');
 include('contents/deconnexion.inc.php');
+include('contents/ajout.inc.php');
+include('contents/afficher.inc.php');
+include('contents/modifier.inc.php');
 
 if(isset($_SESSION['user'])){
     echo 'Salut ' . $_SESSION['user']['pseudo'];
