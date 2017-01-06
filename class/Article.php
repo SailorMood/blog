@@ -23,20 +23,21 @@ class Article
     }
 
     public static function modifier(){
+        $instance = new PDO("mysql:host=localhost;dbname=blog", "root", "");
         $sql = "UPDATE article
-SET titre='".$_POST['titre']."',contenu='".$_POST['contenu']."',date=".$_POST['date']."
+SET id='".$_POST['id']."',titre='".$_POST['titre']."',contenu='".$_POST['contenu']."',date=".$_POST['date']."
 WHERE id = ".$_POST['articleId'];
 
-$updateSuccess = $instance->exec($sql);
+    $updateSuccess = $instance->exec($sql);
 
-if ($updateSuccess) {
+    if ($updateSuccess) {
     $message = "Article modifié !";
-} else {
+    } else {
     $message = "L'article n'a pas été modifié !";
-}
+    }
         echo $message;
 
-}
+    }
 
     public static function poster(){
         $instance = new PDO("mysql:host=localhost;dbname=blog", "root", "");
